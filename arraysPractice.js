@@ -135,9 +135,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 
-  //Code Here
+  function removeItem(list,item){
+    if(typeof list === 'string'){
+      return [];
+    }
+    if(list.indexOf(item) >= 0){
+      list.splice(list.indexOf(item),1);
+    }
+    return list;
+  }
+removeItem(myGroceryList,'chips');
 
-//removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+function addItem(list,item){
+  if(typeof list === 'string'){
+    return [];
+  }
+  if(list.indexOf(item) === -1){
+    list.push(item);
+  }
+  return list;
+}
+addItem(myGroceryList,'Jerky')
+
+
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
 
@@ -148,7 +168,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+  function maker(){
+    var newArr = [];
+    for (var i = 1;i <= 215;i++){
+      newArr.push(i);
+    }
+    return newArr
+  }
 
 
 
@@ -185,7 +211,11 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
-  //Code Here
+  function longer(arr1,arr2){
+    if(arr1.length > arr2.length){
+      return arr1
+    } else return arr2
+  }
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
